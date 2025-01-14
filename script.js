@@ -9,15 +9,13 @@ new Vue({
         selected: {}
     },
     methods: {
-        fetchGameList: function () {
-            var that = this;
-            $.ajax({
-                url: `https://steam-appmanifest-generator.azurewebsites.net/api/games?steamid=${this.steamid}`,
-                success: function (result) {
-                    that.games = result.response.games;
-                }
-            });
-        },
+       fetchGameList: function () {
+    this.games = [
+        { appid: "990080", name: "Hogwarts Legacy" },
+        { appid: "2878600", name: "Harry Potter: Quidditch Champions" }
+    ];
+},
+
         generateManifest: function () {
             result =
 `"AppState"
